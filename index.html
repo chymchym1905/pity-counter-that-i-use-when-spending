@@ -1,52 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dynamic Counter</title>
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-
-      #counter {
-        font-size: 2em;
-      }
-    </style>
   </head>
   <body>
     <input type="number" id="counter" value="0" min="0" step="10" onchange="updateText(this.value)" />
-    <button onclick="increment()" style="font-size: 2em">+</button>
-    <button onclick="decrement()" style="font-size: 2em">-</button>
-
-    <script>
-      function increment() {
-        var counter = document.getElementById("counter");
-        counter.value = parseInt(counter.value) + 10;
-        updateText(counter.value);
-      }
-
-      function decrement() {
-        var counter = document.getElementById("counter");
-        counter.value = parseInt(counter.value) - 10;
-        updateText(counter.value);
-      }
-
-      function updateText(value) {
-        var counter = document.getElementById("counter");
-        fetch(
-          "https://26e2idk26ufght74axl33jwtqm0xgcel.lambda-url.us-west-2.on.aws/",
-          {
-            method: "POST",
-            body: JSON.stringify({ value: "Pity: " + value }),
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-          }
-        );
-      }
-    </script>
+    <div class="buttons">
+        <button onclick="increment()">Increase by 10</button>
+    <button onclick="decrement()">Decrease by 10</button>
+    </div>
   </body>
 </html>

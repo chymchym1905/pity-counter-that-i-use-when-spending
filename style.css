@@ -1,0 +1,26 @@
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+body > input {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  font-size: 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.buttons button {
+  font-size: 30px;
+  margin: 0 5px;
+}
